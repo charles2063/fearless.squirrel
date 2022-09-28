@@ -5,6 +5,7 @@ function update()
     var rotateAngle = Math.PI / 2 * delta * 2;   // pi/2 radians (90 degrees) per second
 
     if (keyboard.pressed("left"))
+        //console.log(delta, rotateAngle);
         player1.turnLeft(rotateAngle);
     if (keyboard.pressed("right"))
         player1.turnRight(rotateAngle);
@@ -13,6 +14,9 @@ function update()
     if (keyboard.pressed("down"))
         player1.decelerate(moveDistance);
 
+    //ennemy.accelerate(moveDistance);
+    ennemy.move();
     player1.move();
+    //ennemy.shoot();
     controls.update();
 }

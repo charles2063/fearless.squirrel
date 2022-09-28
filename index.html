@@ -37,6 +37,7 @@
 <script src="js/OrbitControls.js"></script>
 <script src="js/THREEx.KeyboardState.js"></script>
 <script src="game/player.js"></script>
+<script src="game/ennemy.js"></script>
 <script src="game/graphic.js"></script>
 <script src="game/physic.js"></script>
 <script src="game/shoot.js"></script>
@@ -46,7 +47,7 @@
     var keyboard = new THREEx.KeyboardState();
     var clock = new THREE.Clock();
     var player1,
-        player2;
+        ennemy;
     var WIDTH = 600,
         HEIGHT = 400;
 
@@ -59,7 +60,7 @@
         render();
         update();
         player1.displayInfo();
-        //player2.displayInfo();
+        ennemy.displayInfo();
         shoot();
         collisions();
     }
