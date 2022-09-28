@@ -23,7 +23,7 @@ var Player = function(name, color, position, direction) {
 
 Player.prototype.dead = function () {
     this.graphic.position.z = this.graphic.position.z-0.1;
-    console.log("dead function");
+  
         //Nettoyage de la div container
         $("#container").html("");
         jQuery('#'+this.name+' >.life').text("Tu es mort !");
@@ -88,7 +88,6 @@ Player.prototype.move = function () {
 };
 
 Player.prototype.loseLife = function() {
-    console.log("hello we are losing life");
     this.life -= 1;
     if (this.life == 0) {
         this.dead();

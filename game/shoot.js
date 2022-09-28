@@ -79,7 +79,6 @@ function ennemy_collision()
     var y1 = ennemy.graphic.position.y + HEIGHT / 2;
     
     rotate = Math.PI / 2 * 2;
-    console.log(rotate);
     if ( x1 > WIDTH ) {
         ennemy.graphic.position.x -= x1 - WIDTH;
         ennemy.rotate(rotate);
