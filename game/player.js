@@ -86,3 +86,13 @@ Player.prototype.move = function () {
     light1.position.y = this.position.y;
    //light1.position.z = this.graphic.position.z + 500;
 };
+
+Player.prototype.loseLife = function() {
+    console.log("hello we are losing life");
+    this.life -= 1;
+    if (this.life == 0) {
+        this.dead();
+    } else {
+        this.position = new THREE.Vector2(50, 0);
+    }
+}

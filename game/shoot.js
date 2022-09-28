@@ -38,6 +38,7 @@ function collisions()
     player_collision();
     ennemy_collision();
     player_falling();
+    player_ennemy_collision();
 }
 
 function bullet_collision()
@@ -93,6 +94,20 @@ function ennemy_collision()
         ennemy.graphic.position.y -= y1 - HEIGHT;
 }
 
+function player_ennemy_collision()
+{
+    x_e = ennemy.graphic.position.x;
+    y_e = ennemy.graphic.position.y;
+    x_p = player1.graphic.position.x;
+    y_p = player1.graphic.position.y;
+    test1 = x_e - x_p;
+    test2 = y_e - y_p;
+    if (test1 < 1 && test2 < 1)
+    {
+        player1.loseLife();
+    }
+}
+
 function player_falling()
 {
     var nb_tile = 10;
@@ -102,6 +117,9 @@ function player_falling()
     var y = player1.graphic.position.y | 0;
     var length = noGround.length;
     var element = null;
+
+    // lose life when you fall
+    //player1.loseLife();
 
     for (var i = 0; i < length; i++) {
         continue;
